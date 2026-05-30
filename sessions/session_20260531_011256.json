@@ -1,0 +1,53 @@
+{
+  "session_info": {
+    "timestamp": "2026-05-31T01:12:56.898473",
+    "session_id": "20260531_011256",
+    "duration": "0:00:14.042058",
+    "status": "success"
+  },
+  "user_data": {
+    "name": "vaibhav",
+    "requirement": "ai and machine learnig"
+  },
+  "webhook": {
+    "url": "https://webhook.site/test-webhook",
+    "status_code": "200",
+    "submission_success": true
+  },
+  "api_key": {
+    "configured": true,
+    "preview": "APISHV2RPnAxbDx..."
+  },
+  "conversation_history": [
+    {
+      "timestamp": "2026-05-31T01:12:42.856767",
+      "speaker": "Assistant",
+      "message": "Hello, welcome to Earthonoid AI. I'm your AI Voice Assistant."
+    },
+    {
+      "timestamp": "2026-05-31T01:12:42.856936",
+      "speaker": "Assistant",
+      "message": "What is your name?"
+    },
+    {
+      "timestamp": "2026-05-31T01:12:49.384551",
+      "speaker": "User",
+      "message": "vaibhav"
+    },
+    {
+      "timestamp": "2026-05-31T01:12:49.385403",
+      "speaker": "Assistant",
+      "message": "What is your requirement or problem you'd like to solve?"
+    },
+    {
+      "timestamp": "2026-05-31T01:12:55.708518",
+      "speaker": "User",
+      "message": "ai and machine learnig"
+    },
+    {
+      "timestamp": "2026-05-31T01:12:56.897137",
+      "speaker": "Assistant",
+      "message": "Thank you. Your information has been submitted successfully."
+    }
+  ]
+}

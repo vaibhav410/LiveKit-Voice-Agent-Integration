@@ -1,0 +1,48 @@
+{
+  "session_info": {
+    "timestamp": "2026-05-31T01:19:49.167292",
+    "session_id": "20260531_011949",
+    "duration": "0:00:18.236131",
+    "status": "success"
+  },
+  "user_data": {
+    "name": "vaibhav",
+    "requirement": "ai and ml"
+  },
+  "webhook": {
+    "url": "https://webhook.site/test-webhook",
+    "submission_success": true
+  },
+  "conversation_history": [
+    {
+      "timestamp": "2026-05-31T01:19:30.931795",
+      "speaker": "Assistant",
+      "message": "Hello, welcome to Earthonoid AI. I'm your AI Voice Assistant."
+    },
+    {
+      "timestamp": "2026-05-31T01:19:30.931989",
+      "speaker": "Assistant",
+      "message": "What is your name?"
+    },
+    {
+      "timestamp": "2026-05-31T01:19:35.551033",
+      "speaker": "User",
+      "message": "vaibhav"
+    },
+    {
+      "timestamp": "2026-05-31T01:19:35.551492",
+      "speaker": "Assistant",
+      "message": "What is your requirement or problem you'd like to solve?"
+    },
+    {
+      "timestamp": "2026-05-31T01:19:47.746266",
+      "speaker": "User",
+      "message": "ai and ml"
+    },
+    {
+      "timestamp": "2026-05-31T01:19:49.167221",
+      "speaker": "Assistant",
+      "message": "Thank you. Your information has been submitted successfully."
+    }
+  ]
+}
