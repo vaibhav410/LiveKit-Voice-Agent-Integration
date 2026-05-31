@@ -91,20 +91,75 @@ User (Voice / Input)
 
 ---
 
-## AWS Deployment (Q3)
+## Q3 – AWS Deployment
 
-Deploy the voice agent on **AWS EC2** with webhook integration:
+Deploy the Voice Agent automation application on **AWS EC2** with documented steps, architecture, and deployment evidence.
+
+### Deployment summary
+
+| Item | Detail |
+|------|--------|
+| **Platform** | Amazon EC2 (Ubuntu 22.04 LTS) |
+| **Application** | `voice_agent.py` — LiveKit Voice Agent |
+| **Instance type** | `t3.small` (recommended) |
+| **Ingress** | SSH (port 22) from trusted IP |
+| **Egress** | Webhook POST to external endpoint |
+| **Monitoring** | Amazon CloudWatch (CPU, status checks, optional agent) |
+| **Full guide** | [`docs/Q3_AWS_Deployment.md`](docs/Q3_AWS_Deployment.md) |
+
+### Architecture diagram
 
 ```
-User → AWS EC2 → Voice Agent → Webhook
+User
+  ↓
+AWS EC2
+  ↓
+Voice Agent Python Application
+  ↓
+Webhook Endpoint
 ```
-
-| Topic | Link |
-|-------|------|
-| EC2 setup, security groups, Python, Git clone | [`docs/Q3_AWS_Deployment.md`](docs/Q3_AWS_Deployment.md) |
-| Monitoring & CloudWatch | [Q3 – Monitoring Strategy](docs/Q3_AWS_Deployment.md#monitoring-strategy) |
 
 ![Q3 AWS Architecture](screenshots/q3_architecture.png)
+
+### Deployment evidence
+
+Deployment was verified with the following checks:
+
+| Verification | Status |
+|--------------|--------|
+| EC2 Instance state = Running | Verified |
+| SSH connection successful | Verified |
+| Python application started | Verified |
+| Webhook submission successful (HTTP 200) | Verified |
+| Session logs visible in `sessions/` | Verified |
+| CloudWatch metrics available | Verified |
+
+See [Deployment Verification](docs/Q3_AWS_Deployment.md#deployment-verification) for the full checklist and validation commands.
+
+### Screenshots
+
+| Screenshot | Description |
+|------------|-------------|
+| [`q3_architecture.png`](screenshots/q3_architecture.png) | End-to-end AWS deployment architecture |
+| [`q3_ec2_running.png`](screenshots/q3_ec2_running.png) | EC2 instance in **Running** state |
+| [`q3_application_running.png`](screenshots/q3_application_running.png) | Voice agent executing on EC2 with successful webhook |
+| [`q3_cloudwatch.png`](screenshots/q3_cloudwatch.png) | CloudWatch metrics and monitoring |
+
+![EC2 Running](screenshots/q3_ec2_running.png)
+
+![Application Running](screenshots/q3_application_running.png)
+
+![CloudWatch](screenshots/q3_cloudwatch.png)
+
+### Quick deployment steps
+
+1. Launch EC2 (Ubuntu 22.04) → configure security group  
+2. SSH: `ssh -i key.pem ubuntu@<PUBLIC_IP>`  
+3. Install Python, clone repo, `pip install -r requirements.txt`  
+4. Configure `.env` → run `python voice_agent.py`  
+5. Validate webhook **200** and `sessions/*.json` created  
+
+Details: [Step-by-Step Deployment](docs/Q3_AWS_Deployment.md#step-by-step-deployment)
 
 ---
 
@@ -150,6 +205,9 @@ Lead Form → Webhook → Queue → Workers → CRM → Email Service
 |------|-------------|
 | [`screenshots/q2_voice_agent.png`](screenshots/q2_voice_agent.png) | Voice agent conversation and session output |
 | [`screenshots/q3_architecture.png`](screenshots/q3_architecture.png) | AWS EC2 deployment architecture |
+| [`screenshots/q3_ec2_running.png`](screenshots/q3_ec2_running.png) | EC2 instance running |
+| [`screenshots/q3_application_running.png`](screenshots/q3_application_running.png) | Application execution on EC2 |
+| [`screenshots/q3_cloudwatch.png`](screenshots/q3_cloudwatch.png) | CloudWatch monitoring dashboard |
 | [`screenshots/q4_workflow.png`](screenshots/q4_workflow.png) | API & workflow pipeline |
 | [`screenshots/q5_scalability.png`](screenshots/q5_scalability.png) | Queue-based scalability architecture |
 
@@ -178,6 +236,9 @@ LiveKit-Voice-Agent-Integration/
 ├── screenshots/
 │   ├── q2_voice_agent.png
 │   ├── q3_architecture.png
+│   ├── q3_ec2_running.png
+│   ├── q3_application_running.png
+│   ├── q3_cloudwatch.png
 │   ├── q4_workflow.png
 │   └── q5_scalability.png
 │
