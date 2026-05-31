@@ -5,18 +5,18 @@ LiveKit Voice Agent - Sample Conversation Transcript
 [SYSTEM] Voice Agent initialized
 [SYSTEM] Webhook URL configured: https://webhook.site/your-unique-url
 
-🎤 Assistant: Hello, welcome to Earthonoid AI. I'm your AI Voice Assistant.
+Assistant: Hello, welcome to Earthonoid AI.
 
-🎤 Assistant: What is your name?
-👤 You: Vaibhav
+Assistant: What is your name?
+User: Vaibhav
 
-🎤 Assistant: What is your requirement or problem you'd like to solve?
-👤 You: AI Automation
+Assistant: What is your requirement?
+User: AI Automation
 
 [INFO] Submitting: {"name": "Vaibhav", "requirement": "AI Automation", "timestamp": "2026-05-31T01:30:00.000000"}
 [INFO] Webhook response: 200
 
-🎤 Assistant: Thank you. Your information has been submitted successfully.
+Assistant: Thank you. Your information has been submitted successfully.
 
 ============================================================
 ✓ SESSION SUMMARY
